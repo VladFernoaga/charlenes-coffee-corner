@@ -19,4 +19,8 @@ public class Topping {
     public double getPrice() {
         return price;
     }
+
+    public String getId() {
+        return id;
+    }
 }

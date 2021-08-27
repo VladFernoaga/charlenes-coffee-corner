@@ -22,11 +22,11 @@ public class CoffeeShopProductRepositoryMockImpl implements CoffeeShopProductRep
     public static final String ORANGE_JUICE = "orange-juice";
     public static final String BACON_ROLL = "bacon-roll";
 
-    private static final Topping[] coffeeToppings = {
+    private static final List<Topping> coffeeToppings = Arrays.asList(
             new Topping(TOPPING_EXTRA_MILK, "Extra Milk", 0.3),
             new Topping(TOPPING_FOAMED_MILK, "Foamed Milk", 0.5),
-            new Topping(TOPPING_SPECIAL_ROAST_COFFEE, "Special Roast Coffee", 0.9),
-    };
+            new Topping(TOPPING_SPECIAL_ROAST_COFFEE, "Special Roast Coffee", 0.9)
+    );
 
     private static final List<Product> products = Arrays.asList(
             new Product(COFFEE_SMALL, "Coffee Small", 2.5, ProductType.BEVERAGE, Optional.of(coffeeToppings)),
@@ -44,7 +44,7 @@ public class CoffeeShopProductRepositoryMockImpl implements CoffeeShopProductRep
     @Override
     public Optional<Product> getById(String id) {
         return products.stream()
-                .filter(p -> p.getId().equals(CoffeeShopProductRepositoryMockImpl.COFFEE_SMALL))
+                .filter(p -> p.getId().equals(id))
                 .findFirst();
     }
 

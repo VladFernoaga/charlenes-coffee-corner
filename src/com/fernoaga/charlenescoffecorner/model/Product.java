@@ -1,5 +1,6 @@
 package com.fernoaga.charlenescoffecorner.model;
 
+import java.util.List;
 import java.util.Optional;
 
 public class Product {
@@ -8,9 +9,10 @@ public class Product {
     private final String name;
     private final double price;
     private final ProductType productType;
-    private final Optional<Topping[]> availableToppings;
+    private final Optional<List<Topping>> availableToppings;
 
-    public Product(String id, String name, double price, ProductType productType, Optional<Topping[]> availableToppings) {
+
+    public Product(String id, String name, double price, ProductType productType, Optional<List<Topping>> availableToppings) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -34,7 +36,7 @@ public class Product {
         return productType;
     }
 
-    public Optional<Topping[]> getAvailableToppings() {
+    public Optional<List<Topping>> getAvailableToppings() {
         return availableToppings;
     }
 }
